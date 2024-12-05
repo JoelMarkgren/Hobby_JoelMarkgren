@@ -6,7 +6,23 @@
         xmlns:local="clr-namespace:Hobbys_JoelMarkgren"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="5" Orientation="Horizontal">
+            <TextBlock>Skriv in hobby:</TextBlock>
+            <TextBox Text="{Binding NewHobby, UpdateSourceTrigger=PropertyChanged}" Width="50"></TextBox>
+            <Button Command="{Binding AddCommand}">Submit</Button>
+        </StackPanel>
+        <ListView Grid.Row="1" ItemsSource="{Binding Hobbies}">
+            
+        </ListView>
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
     </Grid>
 </Window>

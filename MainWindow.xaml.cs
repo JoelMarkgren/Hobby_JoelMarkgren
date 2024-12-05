@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Hobbys_JoelMarkgren.VM;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +17,12 @@ namespace Hobbys_JoelMarkgren
     /// </summary>
     public partial class MainWindow : Window
     {
+        private HobbyViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
+            viewModel = new HobbyViewModel();
+            DataContext = viewModel;
         }
     }
 }
